@@ -71,8 +71,10 @@
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>3.2.8</version>
                         <configuration>
-                            <!-- key and passphrase come from MAVEN_GPG_KEY and MAVEN_GPG_PASSPHRASE -->
+                            <!-- key and passphrase come from MAVEN_GPG_KEY and MAVEN_GPG_PASSPHRASE; only the signer bc of
+                                 the plugin reads them, the program gpg of the runner has no key -->
                             <bestPractices>true</bestPractices>
+                            <signer>bc</signer>
                         </configuration>
                         <executions>
                             <execution>
